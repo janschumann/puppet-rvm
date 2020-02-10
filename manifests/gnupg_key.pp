@@ -1,6 +1,7 @@
 # RVM's GPG key import
 class rvm::gnupg_key(
   $key_id     = $rvm::params::gnupg_key_id,
+  $key_server = $rvm::params::key_server,
   $key_source = $rvm::params::key_source,
 ) inherits rvm::params {
 
@@ -8,6 +9,7 @@ class rvm::gnupg_key(
     ensure     => present,
     key_id     => $key_id,
     user       => 'root',
+    key_server => $key_server,
     key_source => $key_source,
     key_type   => public,
   }

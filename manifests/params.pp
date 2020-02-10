@@ -12,6 +12,7 @@ class rvm::params($manage_group = true) {
 
   $proxy_url  = undef
   $no_proxy   = undef
+  $key_server = 'hkp://keys.gnupg.net'
   $key_source = 'https://rvm.io/pkuczynski.asc'
 
   # install the gpg key if gpg is installed or being installed in this puppet run
